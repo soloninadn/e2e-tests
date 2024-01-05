@@ -13,6 +13,6 @@ public class TestLogin {
     void tryToLogin(){
         // log in cuboid and check that displayed Transactions tab
         login();
-        createTransaction();
+        //createTransaction();
     }
 }

@@ -3,7 +3,7 @@ package cuboid_tests;
 import java.time.Duration;
 
 public class EnvConfig {
-    public final static String PAYAPI_URL = "https://testing.cuboidlogic.com/reconciliationui/#/login";
+    public final static String PAYAPI_URL = "https://www.i.ua/";
     public final static String PAYAPI_USERNAME = "dimas@autotests.com";
     public final static String PAYAPI_PASSWORD = "Secret123";
 

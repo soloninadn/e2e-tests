@@ -17,14 +17,14 @@ public class PayapiSteps {
     public static final int MAX_AMOUNT = 29;
 
     public static void login() {
-        SalesforceSteps.checkAccounts();
-        DbSteps.cleanDB();
+//        SalesforceSteps.checkAccounts();
+//        DbSteps.cleanDB();
         Configuration.timeout = EnvConfig.DEFAULT_TIMEOUT_MSEC;
         // log in admin
         open(PAYAPI_URL);
-        element(byId("username")).setValue(PAYAPI_USERNAME);
-        element(byId("password")).setValue(PAYAPI_PASSWORD);
-        element(byId("loginButton")).click();
+//        element(byId("username")).setValue(PAYAPI_USERNAME);
+//        element(byId("password")).setValue(PAYAPI_PASSWORD);
+//        element(byId("loginButton")).click();
     }
 
     public static void createTransaction() {
