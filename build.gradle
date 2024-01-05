@@ -1,0 +1,52 @@
+plugins {
+    id 'java'
+}
+
+group 'org.dmitry_bel'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.postgresql:postgresql:9.4-1203-jdbc42'
+
+    implementation 'io.github.openfeign:feign-core:10.9'
+    implementation 'io.github.openfeign:feign-jackson:10.9'
+    implementation 'io.github.openfeign:feign-okhttp:10.9'
+    implementation 'io.github.openfeign:feign-slf4j:10.9'
+    implementation 'io.github.openfeign.form:feign-form:3.8.0'
+
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+    testCompileOnly 'org.projectlombok:lombok:1.18.20'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+    implementation 'junit:junit:4.13.1'
+    implementation 'org.testng:testng:7.1.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    testImplementation 'com.codeborne:selenide:5.22.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.7.0'
+}
+
+test {
+    useJUnitPlatform {
+        excludeTags 'balance-tests'
+    }
+}
+
+tasks.register("smokeTests", Test) {
+    useJUnitPlatform {
+        includeTags "smoke-tests"
+    }
+    mustRunAfter check
+}
+
+tasks.register("balanceTests", Test) {
+    useJUnitPlatform {
+        includeTags "balance-tests"
+    }
+    mustRunAfter check
+}

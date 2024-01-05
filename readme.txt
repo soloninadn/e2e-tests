@@ -1,0 +1,1 @@
+https://ru.selenide.org/documentation/selenide-vs-selenium.html
